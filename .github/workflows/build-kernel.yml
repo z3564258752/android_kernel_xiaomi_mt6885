@@ -2,12 +2,6 @@ name: Build Kernel
 on:
   push:
 
-  watch:
-    types: [started]
-
-  schedule:
-    - cron: '0 18 * * 0'
-
   workflow_dispatch:
     inputs:
        KERNEL_DEFCONFIG:
@@ -30,7 +24,7 @@ on:
        KERNELSU_TAG:
          description: 'KernelSU Tag'
          required: true
-         default: 'main'
+         default: 'v0.9.5'
        MAKE_BOOT_IMAGE:
          description: 'Make boot image'
          required: false
@@ -39,7 +33,7 @@ on:
        SOURCE_BOOT_IMAGE:
          description: 'Your original boot image url'
          required: false
-         default: 'https://raw.githubusercontent.com/xiaomi-mt6885-devs/android_kernel_xiaomi_mt6885/lineage-20.0/.github/boot.img'
+         default: 'https://raw.githubusercontent.com/xiaomi-mt6885-devs/android_kernel_xiaomi_mt6885/cgroup-v2/.github/boot.img'
 
 jobs:
   build:

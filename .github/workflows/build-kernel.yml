@@ -21,15 +21,15 @@ on:
          required: true
          default: 'true'
          type: boolean
+       KERNELSU_TAG:
+         description: 'KernelSU Tag'
+         required: true
+         default: 'v0.9.5'
        USE_ReKernel:
          description: 'Built-in Re:Kernel'
          required: true
          default: 'true'
          type: boolean
-       KERNELSU_TAG:
-         description: 'KernelSU Tag'
-         required: true
-         default: 'v0.9.5'
        MAKE_BOOT_IMAGE:
          description: 'Make boot image'
          required: false

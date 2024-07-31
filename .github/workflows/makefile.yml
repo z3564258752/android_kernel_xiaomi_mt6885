@@ -1,0 +1,31 @@
+# A simple action usage
+name: Build Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  Build-Kernel:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Build Kernel
+      uses: dabao1955/kernel_build_action@main
+      with:
+          kernel-url: https://github.com/z3564258752/android_kernel_xiaomi_mt6885
+          kernel-dir: msm-4.14
+          kernel-branch: cgroup-v2
+          config: cezanne_user_defconfig
+          arch: arm64
+          aosp-gcc: true
+          aosp-clang: true
+          ksu: true
+          ksu-version: main
+          android-version: 11
+          aosp-clang-version: r383902
+          python-27: true
+          disable-lto: true
+          anykernel3: true
